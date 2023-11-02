@@ -15,3 +15,5 @@ cd training-app
 Run the Application: 
 pnpm start
 
+Install Ant Design:
+npm i antd
