@@ -1,13 +1,12 @@
 import { useEffect } from "react";
-import NavigationBar from "./components/Navigation";
+import LayoutComponent from "./components/Layout/LayoutComponent";
+
 import "./App.css";
 
 function App() {
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
-  return <NavigationBar />;
+  return <LayoutComponent />;
 }
 
 export default App;
