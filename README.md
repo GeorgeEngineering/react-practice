@@ -12,8 +12,11 @@ pnpm create react-app training-app
 Changet to the React's app directory:
 cd training-app
 
-Run the Application: 
-pnpm start
+Install the dependencies:
+pnpm install
 
-Install Ant Design:
-npm i antd
+Run the Application: 
+pnpm dev
+
+Web app URL:
+http://localhost:5173/

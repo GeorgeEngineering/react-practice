@@ -1,0 +1,8 @@
+.content {
+  text-align: "center";
+  min-height: 120;
+  line-height: "120px";
+  color: white;
+  background-color: darkcyan;
+  flex: 1;
+}
