@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Table } from "antd";
 
 const Hobbies = () => {
   const [hobbies, setHobbies] = useState([]);
@@ -10,15 +11,33 @@ const Hobbies = () => {
       .then((response) => response.json())
       .then((data) => {
         setHobbies(data);
-        console.log(`data ${JSON.stringify(data)}`);
       })
       .catch((error) => console.log(`error: ${error}`));
   }, []);
 
+  const columns = [
+    {
+      title: "Id",
+      dataIndex: "id",
+      key: "id",
+    },
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      render: (text) => <a>{text}</a>,
+    },
+    {
+      title: "Created At",
+      dataIndex: "createdAt",
+      key: "createdAt",
+    },
+  ];
+
   return (
     <>
       <h2>Hobbies</h2>
-      {hobbies && <p>{123}</p>}
+      {hobbies && <Table dataSource={hobbies} columns={columns} />}
     </>
   );
 };
