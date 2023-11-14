@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { Table } from "antd";
 
-const Hobbies = () => {
-  const [hobbies, setHobbies] = useState([]);
+const Todos = () => {
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch("https://6551ad555c69a7790328feb7.mockapi.io/api/hobbies", {
+    fetch("https://6551ad555c69a7790328feb7.mockapi.io/api/todos", {
       method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
-        setHobbies(data);
+        setTodos(data);
       })
       .catch((error) => console.log(`error: ${error}`));
   }, []);
@@ -36,10 +36,10 @@ const Hobbies = () => {
 
   return (
     <>
-      <h2>Hobbies</h2>
-      {hobbies && <Table dataSource={hobbies} columns={columns} />}
+      <h2>Todos</h2>
+      {todos && <Table dataSource={todos} columns={columns} />}
     </>
   );
 };
 
-export default Hobbies;
+export default Todos;

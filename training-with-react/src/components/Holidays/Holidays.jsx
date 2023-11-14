@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { Table } from "antd";
 
-const Hobbies = () => {
-  const [hobbies, setHobbies] = useState([]);
+const Holidays = () => {
+  const [holidays, setHolidays] = useState([]);
 
   useEffect(() => {
-    fetch("https://6551ad555c69a7790328feb7.mockapi.io/api/hobbies", {
+    fetch("https://6551ad555c69a7790328feb7.mockapi.io/api/holidays", {
       method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
-        setHobbies(data);
+        setHolidays(data);
       })
       .catch((error) => console.log(`error: ${error}`));
   }, []);
@@ -28,18 +28,18 @@ const Hobbies = () => {
       render: (text) => <a>{text}</a>,
     },
     {
-      title: "Created At",
-      dataIndex: "createdAt",
-      key: "createdAt",
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
     },
   ];
 
   return (
     <>
-      <h2>Hobbies</h2>
-      {hobbies && <Table dataSource={hobbies} columns={columns} />}
+      <h2>Holidays</h2>
+      {holidays && <Table dataSource={holidays} columns={columns} />}
     </>
   );
 };
 
-export default Hobbies;
+export default Holidays;
